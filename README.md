@@ -22,8 +22,8 @@ Wrap the thing you want to cache in a fun, and pass it to a wrapper specifying
 cache type and a unique cache name.
 
 ```erlang
-foo() ->
-    cache:this(cache_lru, myapp_mymod_foo, fun()->
+foo(A_,B_,C_) ->
+    cache:this(cache_lru, myapp_mymod_foo, {A_,B_,C_}, fun({A,B,C})->
         '...'
     end).
 ```
@@ -60,7 +60,15 @@ your rebar.config:
 Cache Policies
 ==============
 
-Todo - I'm thinking LRU, and maybe fixed forward lookahead to start?
+Todo - I'm thinking LRU, and maybe fixed forward lookahead to start? Yeah, one
+for spacial and one for temporal locality.
+
+
+TODO
+====
+
+Add a [] option to cache:this that allows stats tracking to be turned on. Hit
+ratio and maybe some GC stuff, in particular.
 
 
 Terminology
