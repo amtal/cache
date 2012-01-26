@@ -1,0 +1,12 @@
+{application, cache,
+ [
+  {description, "Transparent high-performance caching of referentially transparent functions."},
+  {vsn, "v0.0.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mods, [cache]},
+  {env, []}
+ ]}.
